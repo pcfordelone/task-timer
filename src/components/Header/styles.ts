@@ -9,7 +9,8 @@ export const HeaderContainer = styled.header`
     display: flex;
     gap: 0.5rem;
 
-    a {
+    a,
+    button {
       width: 3rem;
       height: 3rem;
 

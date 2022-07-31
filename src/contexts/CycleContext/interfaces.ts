@@ -19,7 +19,9 @@ export interface CycleContextProps {
   amountSecondsPassed: number
   minutes: string
   seconds: string
+  withSoundOnFinish: boolean
   handleCreateNewCycle: (data: NewCycleData) => void
   handleInterruptCycle: () => void
   handleCompletedCycle: () => void
+  toggleSound: () => void
 }

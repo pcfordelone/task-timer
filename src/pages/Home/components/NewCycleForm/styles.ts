@@ -9,6 +9,33 @@ export const FormContainer = styled.div`
   color: ${(props) => props.theme['gray-100']};
   font-weight: bold;
   flex-wrap: wrap;
+
+  button {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background: transparent;
+    border: 1px solid ${(props) => props.theme['gray-400']};
+    border-radius: 8px;
+    padding: 0.5rem;
+    color: ${(props) => props.theme['gray-100']};
+    cursor: pointer;
+
+    transition: color 0.3s;
+    &:hover {
+      color: ${(props) => props.theme['gray-300']};
+    }
+    span {
+      position: absolute;
+      top: -2.5rem;
+      right: -3.5rem;
+      width: 150px;
+      background: #000;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
 `
 
 const BaseInput = styled.input`

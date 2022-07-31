@@ -6,7 +6,8 @@ import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 import { Countdown } from '../Countdown'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { StartCountdownButton, StopCountdownButton } from '../Countdown/styles'
-import { HandPalm, Play } from 'phosphor-react'
+import { HandPalm, Play, SpeakerHigh, SpeakerNone } from 'phosphor-react'
+import { useState } from 'react'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
@@ -22,9 +23,13 @@ export const NewCycleForm = () => {
   const {
     activeCycleId,
     activeCycle,
+    withSoundOnFinish,
     handleInterruptCycle,
     handleCreateNewCycle,
+    toggleSound,
   } = useCycle()
+
+  const [isSoundAltVisible, setIsSoundAltVisible] = useState(false)
 
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
@@ -39,6 +44,10 @@ export const NewCycleForm = () => {
     handleInterruptCycle()
   }
 
+  const handleToogleSound = () => {
+    toggleSound()
+  }
+
   const task = watch('task')
   const isSubmitDisabled = !task
 
@@ -50,7 +59,7 @@ export const NewCycleForm = () => {
           id="task"
           type="text"
           list="task-suggestions"
-          placeholder="Dê um nome para o seu projeto"
+          placeholder="Nome do seu projeto"
           {...register('task')}
           disabled={!!activeCycleId}
         />
@@ -74,6 +83,25 @@ export const NewCycleForm = () => {
         />
 
         <span>minutos.</span>
+
+        <button
+          type="button"
+          onClick={handleToogleSound}
+          onMouseOver={() => setIsSoundAltVisible(true)}
+          onMouseOut={() => setIsSoundAltVisible(false)}
+        >
+          {withSoundOnFinish ? (
+            <SpeakerHigh size={24} />
+          ) : (
+            <SpeakerNone size={24} />
+          )}
+          {}
+          {isSoundAltVisible && (
+            <span>
+              {withSoundOnFinish ? 'Alarme ligado' : 'Alarme desligado'}
+            </span>
+          )}
+        </button>
       </FormContainer>
       <Countdown />
 

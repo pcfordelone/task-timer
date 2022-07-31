@@ -5,7 +5,7 @@ import { DefaultLayout } from './layouts/DefaultLayout'
 import { History } from './pages/History'
 import { Home } from './pages/Home'
 
-export const Router: React.FC = () => {
+export const CycleRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>

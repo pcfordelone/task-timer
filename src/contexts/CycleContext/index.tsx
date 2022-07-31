@@ -1,3 +1,4 @@
+import completeSound from '../../assets/timer-complete.mp3'
 import { differenceInSeconds } from 'date-fns'
 import {
   createContext,
@@ -7,6 +8,8 @@ import {
   useState,
 } from 'react'
 import { Cycle, NewCycleData, CycleContextProps } from './interfaces'
+import useSound from 'use-sound'
+
 export const CycleContext = createContext<CycleContextProps>(
   {} as CycleContextProps,
 )
@@ -19,6 +22,13 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
+  const [withSoundOnFinish, setWithSoundOnFinish] = useState(false)
+
+  const [completedCycle] = useSound(completeSound, { volume: 0.25 })
+
+  const toggleSound = () => {
+    setWithSoundOnFinish((state) => !state)
+  }
 
   const handleCreateNewCycle = (data: NewCycleData) => {
     const id = String(new Date().getTime())
@@ -49,6 +59,8 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
   }
 
   const handleCompletedCycle = useCallback(() => {
+    if (withSoundOnFinish) completedCycle()
+
     setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
@@ -59,7 +71,7 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
     )
 
     setActiveCycleId(null)
-  }, [activeCycleId])
+  }, [activeCycleId, completedCycle, withSoundOnFinish])
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
 
@@ -113,9 +125,11 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
         amountSecondsPassed,
         minutes,
         seconds,
+        withSoundOnFinish,
         handleCreateNewCycle,
         handleInterruptCycle,
         handleCompletedCycle,
+        toggleSound,
       }}
     >
       {children}
