@@ -8,10 +8,11 @@ export interface CycleReducerState {
 }
 
 export enum CycleActionType {
-  CREATE_NEW_CYCLE,
-  INTERRUPT_CYCLE,
-  COMPLETE_CYCLE,
-  UPDATE_SECONDS_PASSED,
+  CREATE_NEW_CYCLE = 'CREATE_NEW_CYCLE',
+  INTERRUPT_CYCLE = 'INTERRUPT_CYCLE',
+  COMPLETE_CYCLE = 'COMPLETE_CYCLE',
+  UPDATE_SECONDS_PASSED = 'UPDATE_SECONDS_PASSED',
+  DELETE_CYCLE = 'DELETE_CYCLE',
 }
 
 export type CreateNewCycle = {
@@ -25,11 +26,16 @@ export type UpdateSecondsPassed = {
   type: CycleActionType.UPDATE_SECONDS_PASSED
   payload: number
 }
+export type DeleteCycle = {
+  type: CycleActionType.DELETE_CYCLE
+  payload: string
+}
 
 export type ReducerAction =
   | CreateNewCycle
   | InterruptAndCompleteCycle
   | UpdateSecondsPassed
+  | DeleteCycle
 
 export const useCycleReducer: Reducer<CycleReducerState, ReducerAction> = (
   state: CycleReducerState,
@@ -73,6 +79,15 @@ export const useCycleReducer: Reducer<CycleReducerState, ReducerAction> = (
       return {
         ...state,
         amountSecondsPassed: action.payload,
+      }
+    }
+    case CycleActionType.DELETE_CYCLE: {
+      return {
+        ...state,
+        cycles: state.cycles.filter((cycle) => {
+          return cycle.id !== action.payload
+        }),
+        activeCycleId: null,
       }
     }
     default:

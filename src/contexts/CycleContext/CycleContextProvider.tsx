@@ -84,6 +84,13 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
     })
   }
 
+  const deleteCycle = (id: string) => {
+    dispatch({
+      type: CycleActionType.DELETE_CYCLE,
+      payload: id,
+    })
+  }
+
   useEffect(() => {
     localStorage.setItem(
       '@ignite-timer:cycles-1.0.0',
@@ -103,6 +110,7 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
         createNewCycle,
         interruptCycle,
         completeCycle,
+        deleteCycle,
         toggleSound,
       }}
     >

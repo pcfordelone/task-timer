@@ -21,6 +21,7 @@ export interface CycleContextProps {
   createNewCycle: (data: NewCycleData) => void
   interruptCycle: () => void
   completeCycle: () => void
+  deleteCycle: (id: string) => void
   toggleSound: () => void
   setSecondsPassed: (differenceSeconds: number) => void
 }

@@ -4,9 +4,10 @@ import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import { HistoryContainer, HistoryList, Status } from './styles'
+import { Trash } from 'phosphor-react'
 
 export const History: React.FC = () => {
-  const { cycles } = useCycle()
+  const { cycles, deleteCycle } = useCycle()
 
   return (
     <HistoryContainer>
@@ -20,6 +21,7 @@ export const History: React.FC = () => {
               <th>Duração</th>
               <th>Início</th>
               <th>Status</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -44,6 +46,11 @@ export const History: React.FC = () => {
                     {!cycle.completionDate && !cycle.interruptionDate && (
                       <Status statusColor="yellow">Em andamento</Status>
                     )}
+                  </td>
+                  <td>
+                    <button onClick={() => deleteCycle(cycle.id)}>
+                      <Trash size={24} />
+                    </button>
                   </td>
                 </tr>
               ))}
