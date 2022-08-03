@@ -20,7 +20,7 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
     },
     () => {
       const storedStateAsJSON = localStorage.getItem(
-        '@ignite-timer:cycles-1.0.0',
+        '@task-timer:cyclesState-1.0.0',
       )
 
       if (storedStateAsJSON && storedStateAsJSON !== '[]') {
@@ -92,7 +92,7 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
 
   useEffect(() => {
     localStorage.setItem(
-      '@ignite-timer:cycles-1.0.0',
+      '@task-timer:cyclesState-1.0.0',
       JSON.stringify(cyclesState),
     )
   }, [cyclesState])
