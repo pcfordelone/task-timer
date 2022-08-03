@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
-  flex: 1;
+  width: 70rem;
+  margin: 0 auto;
 
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +14,7 @@ export const HomeContainer = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3.5rem;
+    gap: 1.5rem;
   }
 
   a.buyMeACoffee {
@@ -22,7 +24,7 @@ export const HomeContainer = styled.main`
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     color: ${(props) => props.theme['gray-300']};
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     display: flex;
     align-items: center;

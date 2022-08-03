@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const HistoryContainer = styled.main`
+  width: 70rem;
+  margin: 0 auto;
+
   flex: 1;
   padding: 3rem 5rem;
   overflow: hidden;
