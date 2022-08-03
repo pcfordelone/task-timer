@@ -17,7 +17,11 @@ export const CountdownContainer = styled.div`
 
   @media only screen and (max-width: 700px) {
     font-size: 3rem;
-    line-height: 4rem;
+    line-height: 1rem;
+
+    span {
+      padding: 2rem 0.7rem;
+    }
   }
 `
 
