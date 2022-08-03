@@ -13,6 +13,11 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
 
+    @media only screen and (max-width: 900px) {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
     span {
       display: flex;
       align-items: center;

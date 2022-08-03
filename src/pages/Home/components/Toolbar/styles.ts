@@ -10,6 +10,10 @@ export const ToolbarContainer = styled.div`
     justify-content: center;
     gap: 0.2rem;
 
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+    }
+
     background: transparent;
     color: ${(props) => props.theme['gray-100']};
     border: 2px solid ${(props) => props.theme['gray-400']};

@@ -10,6 +10,11 @@ export const HomeContainer = styled.main`
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 900px) {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
   form {
     display: flex;
     flex-direction: column;

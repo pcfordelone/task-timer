@@ -12,6 +12,7 @@ export const HistoryContainer = styled.main`
   flex-direction: column;
 
   @media only screen and (max-width: 700px) {
+    width: 100%;
     padding: 1rem;
   }
 

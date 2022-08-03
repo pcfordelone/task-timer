@@ -10,9 +10,8 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
 
   @media only screen and (max-width: 900px) {
-    height: 98vh;
-    max-width: 95%;
-    margin: 0.5rem auto;
-    padding: 1rem;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0rem auto;
   }
 `

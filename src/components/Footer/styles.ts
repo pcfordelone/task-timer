@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
-  width: 100vmax;
   background: ${(props) => props.theme['gray-900']};
+  padding: 1rem 2rem;
   border-top: 3px solid ${(props) => props.theme['green-500']};
-  padding: 1rem;
 
   .container {
     width: 70rem;
@@ -13,6 +12,20 @@ export const FooterContainer = styled.footer`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: 900px) {
+      flex-wrap: wrap;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
     p > strong {
       color: ${(props) => props.theme['green-500']};
