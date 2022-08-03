@@ -12,6 +12,7 @@ import { useCycle } from '../../contexts/CycleContext/useCycleContext'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
+import { ToolBar } from './components/Toolbar'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
@@ -55,6 +56,7 @@ export const Home = () => {
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
+        <ToolBar />
         <Countdown />
 
         {activeCycle ? (

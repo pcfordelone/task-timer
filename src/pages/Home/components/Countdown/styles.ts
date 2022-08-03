@@ -22,7 +22,7 @@ export const CountdownContainer = styled.div`
 `
 
 export const Separator = styled.div`
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   color: ${(props) => props.theme['green-500']};
 
   width: 0.5rem;
