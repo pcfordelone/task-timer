@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HistoryContainer = styled.main`
   flex: 1;
-  padding: 1rem 5rem;
+  padding: 3rem 5rem;
   overflow: hidden;
 
   display: flex;

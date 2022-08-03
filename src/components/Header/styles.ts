@@ -5,6 +5,27 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      h2 {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+
+    img {
+      height: 4rem;
+    }
+  }
+
   nav {
     display: flex;
     gap: 0.5rem;

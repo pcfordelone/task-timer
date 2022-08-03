@@ -25,7 +25,6 @@ export const CycleProvider = ({ children }: CycleProviderProps) => {
 
       if (storedStateAsJSON && storedStateAsJSON !== '[]') {
         const parsedJSON = JSON.parse(storedStateAsJSON)
-        console.log('carregou', storedStateAsJSON, parsedJSON)
         return parsedJSON
       }
 
