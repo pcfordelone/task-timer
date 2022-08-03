@@ -17,11 +17,10 @@ export interface CycleContextProps {
   activeCycleId: string | null
   activeCycle: Cycle | undefined
   amountSecondsPassed: number
-  minutes: string
-  seconds: string
   withSoundOnFinish: boolean
-  handleCreateNewCycle: (data: NewCycleData) => void
-  handleInterruptCycle: () => void
-  handleCompletedCycle: () => void
+  createNewCycle: (data: NewCycleData) => void
+  interruptCycle: () => void
+  completeCycle: () => void
   toggleSound: () => void
+  setSecondsPassed: (differenceSeconds: number) => void
 }
