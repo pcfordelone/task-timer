@@ -29,7 +29,7 @@ export const History: React.FC = () => {
               cycles.map((cycle) => (
                 <tr key={cycle.id}>
                   <td>{cycle.task}</td>
-                  <td>{cycle.minutesAmount}</td>
+                  <td>{cycle.minutesAmount} min</td>
                   <td>
                     {formatDistanceToNow(new Date(cycle.startDate), {
                       addSuffix: true,

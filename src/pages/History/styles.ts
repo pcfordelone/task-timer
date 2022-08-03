@@ -8,6 +8,10 @@ export const HistoryContainer = styled.main`
   display: flex;
   flex-direction: column;
 
+  @media only screen and (max-width: 700px) {
+    padding: 1rem;
+  }
+
   h1 {
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
@@ -53,6 +57,10 @@ export const HistoryList = styled.div`
       &:first-child {
         width: 50%;
         padding-left: 1.5rem;
+
+        @media only screen and (max-width: 700px) {
+          width: auto;
+        }
       }
 
       &:last-child {

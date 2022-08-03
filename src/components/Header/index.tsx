@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
         <img src={LogoImg} alt="" />
         <div>
           <h2>
-            <i>Pomodoro Timer</i>
+            <i>Task Timer</i>
           </h2>
           <p>Optimize your time</p>
         </div>

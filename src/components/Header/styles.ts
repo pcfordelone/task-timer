@@ -17,18 +17,41 @@ export const HeaderContainer = styled.header`
 
       h2 {
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        color: ${(props) => props.theme['green-500']};
       }
     }
 
     img {
       height: 4rem;
     }
+
+    @media only screen and (max-width: 700px) {
+      div {
+        gap: 0.1rem;
+
+        h2 {
+          font-weight: 700;
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+      }
+
+      img {
+        height: 4rem;
+      }
+    }
   }
 
   nav {
     display: flex;
     gap: 0.5rem;
+
+    @media only screen and (max-width: 900px) {
+      gap: 0.8rem;
+    }
 
     a,
     button {
@@ -44,11 +67,16 @@ export const HeaderContainer = styled.header`
       border-top: 3px solid transparent;
       border-bottom: 3px solid transparent;
 
+      @media only screen and (max-width: 900px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
       &:hover {
         border-bottom: 3px solid ${(props) => props.theme['green-500']};
       }
 
-      &:active {
+      &.active {
         color: ${(props) => props.theme['green-500']};
       }
     }

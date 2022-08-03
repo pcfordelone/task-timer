@@ -28,12 +28,7 @@ export const NewCycleForm = () => {
         disabled={!!activeCycleId}
       />
 
-      <datalist id="task-suggestions">
-        <option value="Projeto 1"></option>
-        <option value="Projeto 2"></option>
-        <option value="Projeto 3"></option>
-        <option value="Projeto 4"></option>
-      </datalist>
+      <datalist id="task-suggestions"></datalist>
 
       <label htmlFor="minutesAmount">Durante</label>
       <MinutesAmountInput
