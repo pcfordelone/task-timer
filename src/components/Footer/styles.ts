@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const FooterContainer = styled.footer`
   width: 100vmax;
   background: ${(props) => props.theme['gray-900']};
+  border-top: 3px solid ${(props) => props.theme['green-500']};
   padding: 1rem;
 
   .container {
