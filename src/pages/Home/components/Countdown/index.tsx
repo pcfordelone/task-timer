@@ -45,7 +45,7 @@ export const Countdown = () => {
       return
     }
 
-    document.title = `Ignite Timer`
+    document.title = `Task Timer`
   }, [minutes, seconds, activeCycle])
 
   return (

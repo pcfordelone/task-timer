@@ -18,19 +18,19 @@ export const NewCycleForm = () => {
 
   return (
     <FormContainer>
-      <label htmlFor="task">Vou trabalhar em:</label>
+      <label htmlFor="task">I will work on:</label>
       <TaskInput
         id="task"
         type="text"
         list="task-suggestions"
-        placeholder="Nome do seu projeto"
+        placeholder="Name of my project"
         {...register('task')}
         disabled={!!activeCycleId}
       />
 
       <datalist id="task-suggestions"></datalist>
 
-      <label htmlFor="minutesAmount">Durante</label>
+      <label htmlFor="minutesAmount">for</label>
       <MinutesAmountInput
         id="minutesAmount"
         type="number"
@@ -41,7 +41,7 @@ export const NewCycleForm = () => {
         disabled={!!activeCycleId}
       />
 
-      <span>minutos.</span>
+      <span>minutes.</span>
 
       <button
         type="button"
@@ -56,9 +56,7 @@ export const NewCycleForm = () => {
         )}
         {}
         {isSoundAltVisible && (
-          <span>
-            {withSoundOnFinish ? 'Alarme ligado' : 'Alarme desligado'}
-          </span>
+          <span>{withSoundOnFinish ? 'Alarm On' : 'Alarm Off'}</span>
         )}
       </button>
     </FormContainer>

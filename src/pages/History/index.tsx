@@ -11,17 +11,17 @@ export const History: React.FC = () => {
 
   return (
     <HistoryContainer>
-      <h1>Meu Histórico</h1>
+      <h1>My History</h1>
 
       <HistoryList>
         <table>
           <thead>
             <tr>
-              <th>Tarefa</th>
-              <th>Duração</th>
-              <th>Início</th>
+              <th>Task</th>
+              <th>Duration</th>
+              <th>Start at</th>
               <th>Status</th>
-              <th>Ações</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -38,13 +38,13 @@ export const History: React.FC = () => {
                   </td>
                   <td>
                     {cycle.interruptionDate && (
-                      <Status statusColor="red">Interrompido</Status>
+                      <Status statusColor="red">Interrupted</Status>
                     )}
                     {cycle.completionDate && (
-                      <Status statusColor="green">Finalizado</Status>
+                      <Status statusColor="green">Completed</Status>
                     )}
                     {!cycle.completionDate && !cycle.interruptionDate && (
-                      <Status statusColor="yellow">Em andamento</Status>
+                      <Status statusColor="yellow">In progress</Status>
                     )}
                   </td>
                   <td>

@@ -59,11 +59,11 @@ export const Home = () => {
 
         {activeCycle ? (
           <StopCountdownButton type="button" onClick={handleInterruptCycle}>
-            <HandPalm size={24} /> Interromper
+            <HandPalm size={24} /> Interrupt
           </StopCountdownButton>
         ) : (
           <StartCountdownButton type="submit" disabled={isSubmitDisabled}>
-            <Play size={24} /> Começar
+            <Play size={24} /> Start
           </StartCountdownButton>
         )}
       </form>
