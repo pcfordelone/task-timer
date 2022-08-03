@@ -6,7 +6,7 @@ import {
 import { NewCycleForm } from './components/NewCycleForm'
 import { Countdown } from './components/Countdown'
 
-import { HandPalm, Play } from 'phosphor-react'
+import { Coffee, HandPalm, Play } from 'phosphor-react'
 import { useCycle } from '../../contexts/CycleContext/useCycleContext'
 
 import * as zod from 'zod'
@@ -67,6 +67,16 @@ export const Home = () => {
           </StartCountdownButton>
         )}
       </form>
+
+      <a
+        href="https://www.buymeacoffee.com/pcfordelone"
+        target="_blank"
+        className="buyMeACoffee"
+        rel="noreferrer"
+      >
+        <Coffee size={40} />
+        Buy me a coffee
+      </a>
     </HomeContainer>
   )
 }

@@ -14,6 +14,26 @@ export const HomeContainer = styled.main`
     align-items: center;
     gap: 3.5rem;
   }
+
+  a.buyMeACoffee {
+    background: transparent;
+    border: 3px solid ${(props) => props.theme['gray-600']};
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: ${(props) => props.theme['gray-300']};
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: ${(props) => props.theme['green-500']};
+    }
+  }
 `
 
 export const BaseCountdownButton = styled.button`

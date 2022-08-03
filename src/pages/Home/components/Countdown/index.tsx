@@ -45,7 +45,7 @@ export const Countdown = () => {
       return
     }
 
-    document.title = `Task Timer`
+    document.title = `Task Timer Online`
   }, [minutes, seconds, activeCycle])
 
   return (
